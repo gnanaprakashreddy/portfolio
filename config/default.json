@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://prakash:prakash@cluster0.ubnqe.mongodb.net/mern_project?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://prakash:prakash@cluster0.ubnqe.mongodb.net/mern_project?retryWrites=true&w=majority",
+    "jwtSecret":"jsonwebtoken"
 }
