@@ -58,7 +58,7 @@ router.post('/user',[
                 return res.json({token});
             })
     }catch(err){
-        return res.status(500).send("server error");
+        return res.status(500).send('server error');
     }
     
 })

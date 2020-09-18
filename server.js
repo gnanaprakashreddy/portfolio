@@ -13,6 +13,7 @@ app.use(express.json({
 
 app.post('/user', require('./routes/api/user'));
 app.get('/auth', require('./routes/api/auth'));
+app.post('/auth',require('./routes/api/auth'));
 app.get('/profile', require('./routes/api/profile'));
 app.get('/posts', require('./routes/api/posts'));
 
