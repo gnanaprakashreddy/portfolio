@@ -11,12 +11,10 @@ app.use(express.json({
 }))
 
 
-app.post('/user', require('./routes/api/user'));
-app.get('/auth', require('./routes/api/auth'));
-app.post('/auth',require('./routes/api/auth'));
-app.get('/profile/me', require('./routes/api/profile'));
-app.post('/profile',require('./routes/api/profile'));
-app.get('/posts', require('./routes/api/posts'));
+app.use('/user', require('./routes/api/user'));
+app.use('/auth', require('./routes/api/auth'));
+app.use('/profile',require('./routes/api/profile'));
+app.use('/posts', require('./routes/api/posts'));
 
 
 app.get('/', (req, res) => {

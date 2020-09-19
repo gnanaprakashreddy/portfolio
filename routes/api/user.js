@@ -8,7 +8,7 @@ const User = require('../../modals/User');
 
 const router = express.Router();
 
-router.post('/user',[
+router.post('/',[
     check('name','Name is required').not().isEmpty(),
     check('email','Email is required').isEmail(),
     check('password','Please enter the password').isLength({min:6})
