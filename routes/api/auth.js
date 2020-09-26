@@ -13,13 +13,13 @@ router.get('/',auth , async (req, res) => {
         res.json(user);
     }catch(err){
         console.log(err.message);
-        res.status(500).send('Server Error')
+        return res.status(500).send('Server Error')
     }
 })
 
 router.post('/',[
     check('email','Email is required').isEmail(),
-    check('password','Please enter the password').exists()
+    check('password','Please enter the password').exists()  
 ],async (req,res)=>{
 
     const errors = validationResult(req);
@@ -35,12 +35,12 @@ router.post('/',[
         let user = await User.findOne({email});
         //if user doesnot exits
         if(!user){
-            return res.status(400).json({error:[{msg: 'Invalid Credentials'}]})
+            return res.status(400).json({errors:[{msg: 'User does not exist'}]})
         }
 
         const isMatch = await bcrypt.compare(password,user.password);
         if(!isMatch){
-            return res.status(400).json({error:[{msg: 'Invalid Credentials'}]})
+            return res.status(400).json({errors:[{msg: 'Incorrect Password..! Please try again'}]})
         }
 
         const payload = {

@@ -6,6 +6,7 @@ const router = express.Router();
 const {check, validationResult} = require('express-validator');
 const Profile = require('../../modals/Profile');
 const User = require('../../modals/User');
+const Post = require('../../modals/Post');
 const { response } = require('express');
 
 
@@ -119,7 +120,7 @@ router.get('/user/:user_id',async (req,res)=>{
 router.delete('/',auth, async(req,res)=>{
     try {
         await Profile.findOneAndDelete({user:req.user.id})
-
+        await Post.deleteMany({user: req.user.id})
         await User.findOneAndDelete({_id:req.user.id})
         res.json({msg:'Deleted Successfully'});
     } catch (err) {
