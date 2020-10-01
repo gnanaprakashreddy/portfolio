@@ -1,0 +1,6 @@
+{
+    "mongoURI":"mongodb+srv://prakash:prakash@cluster0.ubnqe.mongodb.net/mern_project?retryWrites=true&w=majority",
+    "jwtSecret":"jsonwebtoken",
+    "githubClientId":"a33f0dcd58c20ccc82d8",
+    "githubSecret":"c21fb873ae6f3587c72f5fcb70f0760b5d906ca9"
+}
