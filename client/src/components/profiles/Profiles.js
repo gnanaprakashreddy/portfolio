@@ -12,7 +12,7 @@ const Profiles = ({getProfiles, profile:{profiles, loading}}) => {
     },[getProfiles])
     return (
         <Fragment>
-            {loading ? <Spinner/>: <Fragment>
+            {loading ? <Spinner/> : <Fragment>
                 <h1 className="large text-primary">Developers</h1>
                 <p classNam="lead">
                     <i className="fab fa-connectdevelop"></i> Browse and connect with developers  
