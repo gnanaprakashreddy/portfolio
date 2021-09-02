@@ -1,7 +1,5 @@
 # portfolio
 
-https://portfolio-developers.herokuapp.com
-
 To run the project locally
 
 git clone 
